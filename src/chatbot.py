@@ -1,10 +1,10 @@
 # pyrefly: ignore [missing-import]
-from groq import Groq
+from Gemini import gemini
 from src.config import API_KEY, MODEL_NAME, SYSTEM_PROMPT
 
 class Chatbot:
     def __init__(self):
-        self.client = Groq(api_key=API_KEY)
+        self.client = gemini(api_key=API_KEY)
 
     def send_message(self, history: list) -> str:
         messages = [{"role": "system", "content": SYSTEM_PROMPT}] + history

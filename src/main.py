@@ -7,7 +7,7 @@ def main():
     validate_config()
     bot = Chatbot()
     memory = ConversationMemory()
-    print("Chatbot AI siap. Ketik '/reset' untuk hapus percakapan, atau '/exit' untuk keluar.")
+    print("Chatbot AI sederhana yang siap membantu pekerjaan anda.")
 
     while True:
         user_input = input("You: ").strip()

@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_KEY = (
-    os.getenv("GROQ_API_KEY") 
-    or os.getenv("groq_api_key") 
+    os.getenv("GEMINI_API_KEY") 
+    or os.getenv("gemini_api_key") 
     or os.getenv("API_KEY") 
     or os.getenv("api_key")
 )
@@ -14,7 +14,7 @@ API_KEY = (
 MODEL_NAME = (
     os.getenv("MODEL_NAME") 
     or os.getenv("model_name") 
-    or "llama-3.3-70b-versatile"
+    or "gemini-1.5-flash"
 )
 
 SYSTEM_PROMPT = (

@@ -14,7 +14,7 @@ API_KEY = (
 MODEL_NAME = (
     os.getenv("MODEL_NAME") 
     or os.getenv("model_name") 
-    or "gemini-1.5-flash"
+    or "gemini-3.6-flash"
 )
 
 SYSTEM_PROMPT = (

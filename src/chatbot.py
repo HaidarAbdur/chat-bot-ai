@@ -1,18 +1,32 @@
 # pyrefly: ignore [missing-import]
-from Gemini import gemini
+from google import genai
+# pyrefly: ignore [missing-import]
+from google.genai import types
 from src.config import API_KEY, MODEL_NAME, SYSTEM_PROMPT
 
 class Chatbot:
     def __init__(self):
-        self.client = gemini(api_key=API_KEY)
+        self.client = genai.Client(api_key=API_KEY)
 
     def send_message(self, history: list) -> str:
-        messages = [{"role": "system", "content": SYSTEM_PROMPT}] + history
-        try:
-            response = self.client.chat.completions.create(
-                model=MODEL_NAME,
-                messages=messages
+        contents = []
+        for msg in history:
+            role = "user" if msg["role"] == "user" else "model"
+            contents.append(
+                types.Content(
+                    role=role,
+                    parts=[types.Part.from_text(text=msg["content"])]
+                )
             )
-            return response.choices[0].message.content
+
+        try:
+                response = self.client.models.generate_content(
+                    model=MODEL_NAME,
+                    contents=contents,
+                    config=types.GenerateContentConfig(
+                        system_instruction=SYSTEM_PROMPT
+                    )
+                )
+                return response.text
         except Exception as e:
-            return f"Error: {e}"
+            return f"Error:{e}"

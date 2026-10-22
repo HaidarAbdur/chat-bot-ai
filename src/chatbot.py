@@ -1,5 +1,6 @@
 # pyrefly: ignore [missing-import]
 from google import genai
+import chromadb
 # pyrefly: ignore [missing-import]
 from google.genai import types
 from src.config import API_KEY, MODEL_NAME, SYSTEM_PROMPT

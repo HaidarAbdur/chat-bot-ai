@@ -1,5 +1,4 @@
 from pydantic import functional_serializers
-from pydantic import functional_serializers
 import os
 # pyrefly: ignore [missing-import]
 from fastapi import FastAPI
@@ -8,7 +7,6 @@ from fastapi.staticfiles import StaticFiles
 # pyrefly: ignore [missing-import]
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
-
 from src.chatbot import Chatbot
 from src.memory import ConversationMemory
 from src.config import validate_config

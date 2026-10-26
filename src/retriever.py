@@ -40,5 +40,4 @@ for i, doc in enumerate(relevance_docs, 1):
 # Bagaimana cara melakukan perhitungan subnetting dalam jaringan?
 # Apa yang dimaksud Problem Solving?
 # Bagaimana cara kerja jaringan lokal?
-# Bagaimana cara mengamankan jaringan lokal?
     
